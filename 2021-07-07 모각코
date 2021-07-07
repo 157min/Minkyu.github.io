@@ -1,0 +1,60 @@
+unity를 사용하여 컷씬, 에셋제작했다. bgm탐색했다.
+unity에니메이터를 사용하여 프레임단위로 컷씬을 제작하며 게임에 필요한 엔딩연출 전부 제작.
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class destroysinglebgm : MonoBehaviour
+{
+    private void Start()
+    {
+        if (GameObject.Find("BGM"))
+        {
+            Destroy(GameObject.Find("BGM"));
+        }
+    }
+}
+//////////////////////////////////
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class destroysingle : MonoBehaviour
+{
+    public void destroysingleton()
+    {
+        if (GameObject.Find("singletonOBJ"))
+        {
+            Destroy(GameObject.Find("singletonOBJ"));
+        }
+    }
+}
+//////////////////////////////////////////////
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class forbgm : MonoBehaviour
+{
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+}
+////////////////////////////////////////////
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class scenepass4 : StateMachineBehaviour
+{
+    private GameObject _gameObj;
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        _gameObj = GameObject.Find("GameManager");
+        _gameObj.GetComponent<ScenesManager>().ChangeScene("happy_10");
+    }
+
+}
+등 과같은 스크립트 작성,(싱글톤사용, scenemanager이용하여 scene change)
