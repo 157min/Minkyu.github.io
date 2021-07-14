@@ -1,0 +1,7 @@
+1-Npc들 animation Bool -> Trigger로 일부 수정, parameter
+2-mesh collider적용
+3-Player, Npc들 Layer변경.
+4-Sound_Normal값이 고정이어서 유동성있게 변경
+5-NPC들 고유 특수행동을 위해 Coroutine 추가, 제어변수 추가, 행동시간 제어추가
+6-공격시작거리 추가 (사거리랑 다름)
+7-기본행동들 행동비율제어 추가
